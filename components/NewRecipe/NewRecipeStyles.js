@@ -294,6 +294,12 @@ export const WrapperImagePreview = styled.div`
     font-size: 0.8em;
     cursor: pointer;
   }
+
+  & img {
+    max-width: 400px;
+    max-height: 300px;
+    object-fit: cover;
+  }
 `;
 
 export const WrapperAddingRecipe = styled.div`
