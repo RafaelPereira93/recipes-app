@@ -21,6 +21,7 @@ const UpdateRecipe = ({ recipe }) => {
   const [fileData, setFileData] = React.useState("");
   const refIngredients = React.useRef();
   const [previewImage, setPreviewImage] = React.useState();
+  const [messageAddingRecipe, setMessageRecipe] = React.useState(false);
 
   const handleData = (e) => {
     const inputId = e.target.id;
@@ -43,6 +44,7 @@ const UpdateRecipe = ({ recipe }) => {
 
   const handleCreateRecipe = async () => {
     const resultInputs = validateInputs(dataIngredient, ingredientes);
+    setMessageRecipe(true);
 
     if (!resultInputs) {
       setShowModal(true);
@@ -77,6 +79,8 @@ const UpdateRecipe = ({ recipe }) => {
   React.useEffect(() => {
     setIngredientes(recipe?.oneRecipe.ingredientes);
     setDataIngredient(filterRecipeData(recipe));
+
+    return () => setMessageRecipe(false);
   }, [recipe]);
 
   return (
@@ -169,6 +173,12 @@ const UpdateRecipe = ({ recipe }) => {
           <Style.ButtonAddNewRecipe>
             <button onClick={handleCreateRecipe}>Update recipe</button>
           </Style.ButtonAddNewRecipe>
+
+          {messageAddingRecipe && (
+            <Style.WrapperAddingRecipe>
+              <p>Updating recipe ...</p>
+            </Style.WrapperAddingRecipe>
+          )}
         </Style.WrapperNewRecipe>
         <Style.WrapperBackToHome>
           <Link href="/">
