@@ -167,9 +167,12 @@ const FormNewRecipe = () => {
           <Style.ButtonAddNewRecipe>
             <button onClick={handleCreateRecipe}>Add recipe</button>
           </Style.ButtonAddNewRecipe>
-          <Style.WrapperAddingRecipe>
-            {messageAddingRecipe && <p>Adding recipe ...</p>}
-          </Style.WrapperAddingRecipe>
+
+          {messageAddingRecipe && (
+            <Style.WrapperAddingRecipe>
+              <p>Adding recipe ...</p>
+            </Style.WrapperAddingRecipe>
+          )}
         </Style.WrapperNewRecipe>
         <Style.WrapperBackToHome>
           <Link href="/">

@@ -297,14 +297,26 @@ export const WrapperImagePreview = styled.div`
 `;
 
 export const WrapperAddingRecipe = styled.div`
-  display: flex;
-  justify-content: flex-end;
   width: 100%;
+  height: 100vh;
   margin-top: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   & p {
-    text-align: right;
+    background: #e84545;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
+    font-size: max(20px, 2vw);
+    letter-spacing: 1px;
+    user-select: none;
   }
 `;
