@@ -20,5 +20,5 @@ export const uploadImage = async (files) => {
   );
 
   const file = await res.json();
-  return file.secure_url;
+  return { public_id: file.public_id, secure_url: file.secure_url };
 };
