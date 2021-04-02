@@ -9,6 +9,7 @@ import { validateInputs } from "../../utils/validateInputs";
 import { useRouter } from "next/router";
 import { filterRecipeData } from "../../utils/filterRecipeData";
 import { updateRecipe } from "../../utils/updateRecipe";
+import { urlPreviewImage, uploadImage } from "../../utils/uploadImage";
 
 const UpdateRecipe = ({ recipe }) => {
   const router = useRouter();
@@ -17,7 +18,9 @@ const UpdateRecipe = ({ recipe }) => {
   const [ingredientes, setIngredientes] = React.useState([]);
   const [input, setInput] = React.useState("");
   const [showModal, setShowModal] = React.useState(false);
+  const [fileData, setFileData] = React.useState("");
   const refIngredients = React.useRef();
+  const [previewImage, setPreviewImage] = React.useState();
 
   const handleData = (e) => {
     const inputId = e.target.id;
@@ -48,7 +51,16 @@ const UpdateRecipe = ({ recipe }) => {
 
     const idRecipe = router.query.id;
 
-    updateRecipe({ ...dataIngredient, ingredientes }, idRecipe);
+    if (previewImage) {
+      const dataImagem = await uploadImage(fileData);
+
+      await updateRecipe(
+        { ...dataIngredient, ingredientes, dataImagem },
+        idRecipe
+      );
+    } else {
+      await updateRecipe({ ...dataIngredient, ingredientes }, idRecipe);
+    }
 
     setTimeout(() => {
       router.back();
@@ -59,6 +71,13 @@ const UpdateRecipe = ({ recipe }) => {
     setIngredientes(recipe?.oneRecipe.ingredientes);
     setDataIngredient(filterRecipeData(recipe));
   }, [recipe]);
+
+  const handleImage = async (e) => {
+    const file = e.target.files;
+    const fileUrl = await urlPreviewImage(file);
+    setPreviewImage(fileUrl);
+    setFileData(file);
+  };
 
   return (
     <>
@@ -99,6 +118,24 @@ const UpdateRecipe = ({ recipe }) => {
                 onChange={handleData}
               ></textarea>
             </Style.WrapperDescription>
+
+            <Style.WrapperInputFile>
+              <input
+                type="file"
+                name="file"
+                id="file"
+                placeholder="Upload recipe image"
+                onChange={handleImage}
+              />
+              <label htmlFor="file">Choose a file</label>
+              <Style.WrapperImagePreview>
+                <img src={previewImage && previewImage} alt="" />
+                {previewImage && (
+                  <span onClick={() => setPreviewImage("")}>Remove image</span>
+                )}
+              </Style.WrapperImagePreview>
+            </Style.WrapperInputFile>
+
             <Style.WrapperNewIngredient>
               <Style.TitleNewIngredient>Ingredients</Style.TitleNewIngredient>
             </Style.WrapperNewIngredient>

@@ -242,3 +242,54 @@ export const WrapperBackToHome = styled.div`
     box-shadow: none;
   }
 `;
+
+export const WrapperInputFile = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    outline: none;
+  }
+
+  & label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 130px;
+    background: #e84545;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+
+  @media (max-width: 650px) {
+    margin: 30px 0;
+  }
+`;
+
+export const WrapperImagePreview = styled.div`
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+
+  & span {
+    display: inline-block;
+    margin-top: 15px;
+    background: #121212;
+    padding: 6px 10px;
+    color: #fff;
+    border-radius: 3px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+`;

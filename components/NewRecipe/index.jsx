@@ -55,7 +55,6 @@ const FormNewRecipe = () => {
 
     if (previewImage) {
       const dataImagem = await uploadImage(fileData);
-      console.log(dataImagem);
 
       await addNewRecipe({
         ...dataIngredient,

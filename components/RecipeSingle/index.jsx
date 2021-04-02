@@ -37,7 +37,7 @@ const RecipeSingle = ({ recipe }) => {
           </Style.DeleteRecipe>
         </Style.WrapperIcons>
         <Style.WrapperImage>
-          <img src={recipe.dataImagem.secure_url} alt="" />
+          <img src={recipe.dataImagem?.secure_url} alt="" />
         </Style.WrapperImage>
         <Style.WrapperDescriptionAndIngredients>
           <Style.WrapperDescription>

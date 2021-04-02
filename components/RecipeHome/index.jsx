@@ -26,7 +26,7 @@ const RecipeHome = ({ recipe }) => {
         <Style.WrapperImageRecipe>
           <Link href={`/${recipe._id}`}>
             <a>
-              <Style.ImageRecipe src={recipe.dataImagem.secure_url} />
+              <Style.ImageRecipe src={recipe.dataImagem?.secure_url} />
             </a>
           </Link>
         </Style.WrapperImageRecipe>
