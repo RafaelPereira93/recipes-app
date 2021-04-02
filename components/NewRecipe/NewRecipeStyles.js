@@ -295,3 +295,16 @@ export const WrapperImagePreview = styled.div`
     cursor: pointer;
   }
 `;
+
+export const WrapperAddingRecipe = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+
+  & p {
+    text-align: right;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+`;

@@ -67,17 +67,17 @@ const UpdateRecipe = ({ recipe }) => {
     }, 500);
   };
 
-  React.useEffect(() => {
-    setIngredientes(recipe?.oneRecipe.ingredientes);
-    setDataIngredient(filterRecipeData(recipe));
-  }, [recipe]);
-
   const handleImage = async (e) => {
     const file = e.target.files;
     const fileUrl = await urlPreviewImage(file);
     setPreviewImage(fileUrl);
     setFileData(file);
   };
+
+  React.useEffect(() => {
+    setIngredientes(recipe?.oneRecipe.ingredientes);
+    setDataIngredient(filterRecipeData(recipe));
+  }, [recipe]);
 
   return (
     <>
@@ -127,7 +127,7 @@ const UpdateRecipe = ({ recipe }) => {
                 placeholder="Upload recipe image"
                 onChange={handleImage}
               />
-              <label htmlFor="file">Choose a file</label>
+              <label htmlFor="file">Choose a new file</label>
               <Style.WrapperImagePreview>
                 <img src={previewImage && previewImage} alt="" />
                 {previewImage && (

@@ -261,7 +261,7 @@ export const WrapperInputFile = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 130px;
+    max-width: 150px;
     background: #e84545;
     padding: 5px;
     border-radius: 5px;
