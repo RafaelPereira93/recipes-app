@@ -9,6 +9,10 @@ export const TitleNewRecipe = styled.h1`
   color: #e84545;
 
   margin: 80px 0 30px;
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    font-size: 1.8em;
+  }
 `;
 
 export const WrapperNewRecipe = styled.div`
@@ -27,6 +31,10 @@ export const WrapperNewRecipe = styled.div`
 
   @media (max-width: 650px) {
     padding-bottom: 40px;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 8px;
   }
 `;
 
@@ -83,6 +91,12 @@ export const WrapperDescription = styled.div`
 
   & textarea:focus {
     border-color: #e84545;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    & textarea {
+      line-height: 1.2;
+    }
   }
 `;
 
@@ -219,6 +233,11 @@ export const ButtonAddNewRecipe = styled.div`
   & button:hover {
     box-shadow: none;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    width: 90%;
+    margin-bottom: 20px;
+  }
 `;
 
 export const WrapperBackToHome = styled.div`
@@ -305,7 +324,6 @@ export const WrapperImagePreview = styled.div`
 export const WrapperAddingRecipe = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 20px;
   position: fixed;
   top: 0;
   z-index: 999;

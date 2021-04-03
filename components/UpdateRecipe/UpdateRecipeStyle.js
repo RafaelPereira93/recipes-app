@@ -5,10 +5,15 @@ export const TitleNewRecipe = styled.h1`
   justify-content: center;
 
   font-size: max(45px, 3.5vw);
+  text-align: center;
 
   color: #e84545;
 
   margin: 80px 0 30px;
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    font-size: 1.8em;
+  }
 `;
 
 export const WrapperNewRecipe = styled.div`
@@ -24,12 +29,20 @@ export const WrapperNewRecipe = styled.div`
   padding: 20px;
 
   background: #f3f4ed;
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    padding: 8px;
+  }
 `;
 
 export const FormNewRecipe = styled.form`
   width: 100%;
 
   padding: 20px;
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    padding: 5px;
+  }
 `;
 
 export const WrapperAuthorAndName = styled.div`
@@ -217,6 +230,11 @@ export const ButtonAddNewRecipe = styled.div`
   & button:hover {
     box-shadow: none;
   }
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    width: 90%;
+    margin: 20px;
+  }
 `;
 
 export const WrapperBackToHome = styled.div`
@@ -240,6 +258,10 @@ export const WrapperBackToHome = styled.div`
 
   & a:hover {
     box-shadow: none;
+  }
+
+  @media (min-width: 200px) and (max-width: 500px) {
+    margin-bottom: 50px;
   }
 `;
 
@@ -303,7 +325,6 @@ export const WrapperImagePreview = styled.div`
 export const WrapperAddingRecipe = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 20px;
   position: fixed;
   top: 0;
   z-index: 999;

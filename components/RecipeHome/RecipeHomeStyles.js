@@ -38,6 +38,10 @@ export const WrapperContentRecipe = styled.div`
     padding: 20px 0;
     order: 1;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 export const AutorName = styled.h3`

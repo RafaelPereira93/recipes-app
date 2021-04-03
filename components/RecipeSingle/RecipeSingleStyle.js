@@ -14,6 +14,10 @@ export const WrapperRecipe = styled.div`
     max-width: 600px;
     padding: 50px 20px;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 80px 5px;
+  }
 `;
 
 export const TitleRecipe = styled.h2`
@@ -25,6 +29,10 @@ export const TitleRecipe = styled.h2`
     line-height: 1.1;
     font-size: 2.5em;
     margin-bottom: 15px;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    font-size: 2em;
   }
 `;
 
@@ -46,6 +54,10 @@ export const AutorName = styled.h3`
     display: inline-block;
     font-weight: 300;
     font-family: "Poppins", sans-serif;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    font-size: 0.9em;
   }
 `;
 
@@ -70,6 +82,10 @@ export const CreatedAt = styled.h3`
     height: 20px;
     background: rgba(255, 255, 255, 0.5);
     margin-right: 8px;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    font-size: 1em;
   }
 `;
 
@@ -100,6 +116,12 @@ export const WrapperDescription = styled.div`
     font-family: "Poppins", sans-serif;
     color: #f3f4ed;
     word-break: break-word;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    & p {
+      font-size: 0.95em;
+    }
   }
 `;
 
@@ -153,6 +175,14 @@ export const IngredientsList = styled.ul`
       text-align: left;
     }
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    & li:before {
+      content: "•";
+      color: #e84545;
+      padding-right: 10px;
+    }
+  }
 `;
 
 export const WrapperBackToHome = styled.div`
@@ -183,6 +213,12 @@ export const WrapperIcons = styled.div`
 
   & img {
     width: 30px;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    & img {
+      width: 25px;
+    }
   }
 `;
 

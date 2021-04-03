@@ -50,6 +50,12 @@ export const NotFoundTItle = styled.div`
     font-size: max(16px, 2vw);
     font-weight: 300;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    h2 {
+      font-size: 0.9em;
+    }
+  }
 `;
 
 export const WrapperTimer = styled.div`

@@ -42,6 +42,10 @@ export const Container = styled.div`
   font-family: "Playfair Display", serif;
   padding: 20px;
   overflow-x: hidden;
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 10px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -58,6 +62,14 @@ export const Title = styled.h1`
   & img {
     width: 60px;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    font-size: 30px;
+
+    & img {
+      width: 35px;
+    }
+  }
 `;
 
 export const WrapperGridRecipes = styled.section`
@@ -70,4 +82,8 @@ export const WrapperGridRecipes = styled.section`
   margin-top: 50px;
   margin-bottom: 50px;
   padding: 0 20px;
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 0;
+  }
 `;

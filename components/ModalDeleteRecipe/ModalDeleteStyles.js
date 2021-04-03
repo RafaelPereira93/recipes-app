@@ -49,6 +49,14 @@ export const WrapperModalContent = styled.div`
       font-size: 1.2em;
     }
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    padding: 20px;
+
+    & h2 {
+      font-size: 1em;
+    }
+  }
 `;
 
 export const WrapperButtons = styled.div`
@@ -74,6 +82,10 @@ export const WrapperButtons = styled.div`
   & button:hover {
     box-shadow: none;
   }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    margin: 30px 0 15px;
+  }
 `;
 
 export const RecipeDeletedMessage = styled.div`
@@ -85,5 +97,12 @@ export const RecipeDeletedMessage = styled.div`
   & p {
     font-family: "Poppins", sans-serif;
     font-size: 1.3em;
+  }
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    & p {
+      font-family: "Poppins", sans-serif;
+      font-size: 1em;
+    }
   }
 `;
